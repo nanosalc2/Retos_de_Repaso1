@@ -56,6 +56,22 @@ var Point = /** @class */ (function () {
         }
         return quadrant;
     };
+    Point.prototype.calculateNearest = function (points) {
+        var point;
+        var array = [];
+        for (var i_1 = 0; i_1 < points.length; i_1++) {
+            array.push(this.calculateDistance(points[i_1]));
+        }
+        array.sort();
+        var i = 0;
+        while (i < array.length) {
+            if (array[0] == this.calculateDistance(points[i])) {
+                return points[i];
+            }
+            i++;
+        }
+        return points[i];
+    };
     return Point;
 }());
 exports.Point = Point;

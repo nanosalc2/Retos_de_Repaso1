@@ -86,5 +86,27 @@ export class Point
        return quadrant
     }
 
+    public calculateNearest(points:Point[]):Point
+    {
+        let point:Point;
+        let array:number[] = [];
+        for(let i = 0; i < points.length; i++)
+        {
+           array.push(this.calculateDistance(points[i])); 
+        }
+        
+        array.sort();
+        let i = 0;
+        while( i < array.length)
+        {
+            if(array[0] == this.calculateDistance(points[i]))
+            {
+                return points[i];
+            }
+            i++
+        }
+        return points[i]
+    }
 };
+
 
