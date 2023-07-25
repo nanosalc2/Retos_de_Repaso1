@@ -55,8 +55,36 @@ export class Point
         return Number(distanceAB.toFixed(3));
     }
 
+    public calcularQuadrant():number
+    {
+        let quadrant:number = 0;
+       if(this.x == 0 || this.y == 0)
+        {
+            quadrant = 0;
+        }
+
+       if(this.x > 0 && this.y > 0)
+        {
+            quadrant = 1;
+        }
+
+       if(this.x < 0 && this.y > 0)
+        {
+            quadrant = 2;
+        }
+
+       if(this.x < 0 && this.y < 0)
+        {
+            quadrant = 3;
+        }
+
+       if(this.x > 0 && this.y < 0)
+        {
+            quadrant = 4;
+        }
+
+       return quadrant
+    }
+
 };
-
-
-
 
