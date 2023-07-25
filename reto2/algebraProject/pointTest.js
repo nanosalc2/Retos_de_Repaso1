@@ -2,9 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var point_1 = require("./point");
 var myPoint = new point_1.Point(1, 4);
+var mySecondPoint = new point_1.Point(3, 7);
 console.log(myPoint.toString());
 console.log(myPoint.getX());
 console.log(myPoint.getY());
 myPoint.setX(2);
 myPoint.setY(3);
 console.log(myPoint.toString());
+console.log(myPoint.distanceTolOrigin());
+console.log(myPoint.calculateDistance(mySecondPoint));
